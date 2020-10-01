@@ -1,4 +1,4 @@
-
+# Best linux_face_unlock contribution by rushabh-v
 # Facerec - Linux Face Unlock
 Facerec is a face authentication system for Ubuntu Linux that works while logging in, running "sudo" commands, etc. with a user-friendly CLI to operate it.
 
