@@ -3,6 +3,7 @@ src/cli/. lib/Auth/Facerec/
 build.py lib/Auth/Facerec/
 comm_auth_orig.py lib/Auth/Facerec/
 Facerec lib/Auth/Facerec/
+_version.py lib/Auth/Facerec
 src/cli/facerec usr/share/bash-completion/completions/
 pam_python.so lib/x86_64-linux-gnu/security/
 

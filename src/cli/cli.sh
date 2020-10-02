@@ -41,6 +41,10 @@ elif [ "$1" = "remove" ]; then
 elif [ "$1" = "--help" ]; then
     python3 /lib/Auth/Facerec/cli_info.py
 
+
+elif [ "$1" = "version" ]; then
+    python3 /lib/Auth/Facerec/_version.py
+
 fi
 }
 

@@ -34,6 +34,7 @@ source ~/.bashrc
 | facerec disable | Temporarily disable facerec |
 | facerec remove | Completely remove the facerec  |
 | facerec --help | Get the CLI info |
+| facerec version | Display installed version of facerec |
 
 Try using the tab compeletions. It is one of the trivial features I am extra proud of :joy:
 

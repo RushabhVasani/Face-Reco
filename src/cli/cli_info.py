@@ -10,6 +10,7 @@ if __name__ == '__main__':
     ('facerec disable', 'Temporarily disable facerec. (preserve the setup)'),
     ('facerec remove', 'Completely remove the facerec.'),
     ('facerec --help', 'Get info of the CLI'),
+    ('facerec version', 'Display installed version of facerec'),
     )
 
     table_instance = AsciiTable(TABLE_DATA, title)
