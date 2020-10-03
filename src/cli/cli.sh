@@ -43,7 +43,7 @@ elif [ "$1" = "--help" ]; then
 
 
 elif [ "$1" = "--version" ]; then
-    python3 /lib/Auth/Facerec/config.py
+    python3 /lib/Auth/Facerec/_version.py
 
 fi
 }
