@@ -32,9 +32,9 @@ source ~/.bashrc
 | facerec new | Add a new root face |
 | facerec enable | Enable facerec |
 | facerec disable | Temporarily disable facerec |
-| facerec remove | Completely remove the facerec  |
+| facerec remove | Completely remove the facerec |
+| facerec --version | Display installed version of facerec |
 | facerec --help | Get the CLI info |
-| facerec version | Display installed version of facerec |
 
 Try using the tab compeletions. It is one of the trivial features I am extra proud of :joy:
 
