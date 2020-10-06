@@ -19,10 +19,10 @@ CLASSIFIERS = [
 ]
 
 setup(
-    name=config.name,
+    name=config.NAME,
     version=config.__version__,
-    license=config.license,
-    url=config.url,
+    license=config.LICENSE,
+    url=config.GIT_URL,
     description="A face Authentication system for Ubuntu Linux.",
     classifiers=CLASSIFIERS,
     author="Rushabh Vasani",

@@ -1,5 +1,5 @@
 __version__ = 1.1
-name = 'facerec'
+NAME = 'facerec'
 version = __version__
-license = 'GPL-3'
-url = 'http://github.com/rushabh-v/linux_face_unlock'
+LICENSE = 'GPL-3'
+GIT_URL = 'http://github.com/rushabh-v/linux_face_unlock'
