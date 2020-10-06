@@ -1,4 +1,4 @@
-__version__ = 1.1
+import config
 
 if __name__ == "__main__":
-    print(__version__)
+    print(config.__version__)

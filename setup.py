@@ -1,6 +1,6 @@
 import os
 from setuptools import setup, find_packages
-from config import __version__
+import config
 
 here = os.path.abspath(os.path.dirname(__file__))
 CLASSIFIERS = [
@@ -20,7 +20,7 @@ CLASSIFIERS = [
 
 setup(
     name='facerec',
-    version=__version__,
+    version=config.__version__,
     license='BSD',
     url='http://github.com/rushabh-v/linux_face_unlock',
     description="A face Authentication system for Ubuntu Linux.",
