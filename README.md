@@ -28,17 +28,17 @@ source ~/.bashrc
 
 ### Using deb package
 
-#### 1. Download the deb package of Facerec
+#### 1. Download the deb package
 ```
 wget https://github.com/rushabh-v/linux_face_unlock/releases/download/v1.1/facerec_1.1_all.deb
 ```
 
-#### 2. Install All the dependencies
+#### 2. Install all the dependencies
 ```
 sudo apt install -y python3-pip python3-opencv python3-setuptools python-execnet cmake libatlas-base-dev build-essential
 ```
 
-#### 3. Install the .deb package on your machine using the command
+#### 3. Install the deb package using
 ```
 sudo dpkg -i facerec_1.1_all.deb
 ```
