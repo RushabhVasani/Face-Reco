@@ -48,6 +48,8 @@ sudo dpkg -i facerec_1.1_all.deb
 source ~/.bashrc
 ```
 
+NOTE: The deb package won't receive updates automatically. The PPA method is more preferable.
+
 
 ## Command Line Interface
 
