@@ -7,8 +7,8 @@ if __name__ == '__main__':
     f = open(bashrc, "r")
     text = f.read()
     f.close()
-    if "source /lib/Auth/Facerec/cli.sh" in text:
-        text = text.replace("source /lib/Auth/Facerec/cli.sh", "")
+    if "source /usr/lib/Auth/Facerec/cli.sh" in text:
+        text = text.replace("source /usr/lib/Auth/Facerec/cli.sh", "")
         f = open(bashrc, "w+")
         f.write(text)
         f.close()

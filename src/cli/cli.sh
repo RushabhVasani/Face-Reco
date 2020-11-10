@@ -4,11 +4,11 @@ FILE=/usr/share/pam-configs/Facerec
 
 function facerec(){
 if [ "$1" = "new" ]; then
-    sudo python3 /lib/Auth/Facerec/add_new.py
+    sudo python3 /usr/lib/Auth/Facerec/add_new.py
 
 
 elif [ "$1" = "enable" ]; then
-    sudo cp /lib/Auth/Facerec/Facerec /usr/share/pam-configs/
+    sudo cp /usr/lib/Auth/Facerec/Facerec /usr/share/pam-configs/
     sudo pam-auth-update --package
     echo "Enabling facerec... Done"
 
@@ -26,9 +26,9 @@ elif [ "$1" = "remove" ]; then
         sudo rm /usr/share/pam-configs/Facerec
     fi
     echo "Removing CLI... Done"
-    sudo python3 /lib/Auth/Facerec/remove_cli.py
-    sudo chattr -R -i /lib/Auth/
-    sudo rm -r /lib/Auth
+    sudo python3 /usr/lib/Auth/Facerec/remove_cli.py
+    sudo chattr -R -i /usr/lib/Auth/
+    sudo rm -r /usr/lib/Auth
 
     sudo rm /usr/share/bash-completion/completions/facerec
     echo "Removing facerec file system... Done"
@@ -39,11 +39,11 @@ elif [ "$1" = "remove" ]; then
 
 
 elif [ "$1" = "--help" ]; then
-    python3 /lib/Auth/Facerec/cli_info.py
+    python3 /usr/lib/Auth/Facerec/cli_info.py
 
 
 elif [ "$1" = "--version" ]; then
-    python3 /lib/Auth/Facerec/_version.py
+    python3 /usr/lib/Auth/Facerec/_version.py
 
 fi
 }

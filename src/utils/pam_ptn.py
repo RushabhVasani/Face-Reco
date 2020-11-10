@@ -18,7 +18,7 @@ def pam_sm_authenticate(pamh, flags, args):
     print "facerec running.."
 
     try:
-        chdir("/lib/Auth/Facerec/")
+        chdir("/usr/lib/Auth/Facerec/")
         if call_python_version("3", "compare", "authenticate", []):
             chdir(cur)
             return pamh.PAM_SUCCESS
@@ -37,7 +37,7 @@ def pam_sm_open_session(pamh, flags, args):
     print "facerec running.."
 
     try:
-        chdir("/lib/Auth/Facerec/")
+        chdir("/usr/lib/Auth/Facerec/")
         if call_python_version("3", "compare", "authenticate", []):
             chdir(cur)
             return pamh.PAM_SUCCESS

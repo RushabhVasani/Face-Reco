@@ -3,4 +3,4 @@ Default: yes
 Priority: 512
 Auth-Type: Primary
 Auth:
-	[success=end default=ignore]        pam_python.so /lib/Auth/Facerec/pam_ptn.py
+	[success=end default=ignore]        pam_python.so /usr/lib/Auth/Facerec/pam_ptn.py

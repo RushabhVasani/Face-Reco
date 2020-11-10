@@ -1,5 +1,5 @@
 from os import system, path
-from config import PATH
+from .config import PATH
 
 import getFaces
 
