@@ -2,9 +2,6 @@ import sys
 import numpy as np
 from os import path
 
-import sys
-from pathlib import Path
-sys.path.append(str(Path('.').absolute().parent.parent))
 from config import PATH
 
 deps_path = list(np.load(path.join(PATH, 'deps_path.npy')))

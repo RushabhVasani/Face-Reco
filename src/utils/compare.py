@@ -1,3 +1,4 @@
+import os
 
 from getFaces import (face_distance,
  getFaces,
@@ -7,9 +8,6 @@ from getFaces import (face_distance,
  np,
 )
 
-import sys
-from pathlib import Path
-sys.path.append(str(Path('.').absolute().parent.parent))
 from config import PATH
 
 def load_npy(file):
@@ -17,7 +15,7 @@ def load_npy(file):
 
 def authenticate():
 
-    path = path.join(PATH, 'roots/')
+    path = os.path.join(PATH, 'roots/')
     roots = [(path+f) for f in listdir(path) if isfile(join(path, f))] 
     if not roots:
         return False
