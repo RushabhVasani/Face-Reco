@@ -22,8 +22,8 @@ jobs:
 
     - name: Check imports
       run: |
-        python3 /lib/Auth/Facerec/getFaces.py
-        python /lib/Auth/Facerec/pam_ptn.py
+        python3 /usr/lib/Auth/Facerec/getFaces.py
+        python /usr/lib/Auth/Facerec/pam_ptn.py
 
     # - name: Test facerec --help
     #   run: facerec --help
