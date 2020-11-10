@@ -1,14 +1,20 @@
-from os import system
+from os import system, path
+
+import sys, inspect
+current_dir = path.dirname(path.abspath(inspect.getfile(inspect.currentframe())))
+src_dir = path.dirname(current_dir)
+main_dir = path.dirname(src_dir)
+sys.path.insert(0, main_dir) 
+from config import PATH
 
 import getFaces
-
 
 CRED = '\33[91m'
 CGRN = '\33[42m'
 CEND = '\33[0m'
 
 if __name__ == '__main__':
-    path = '/lib/Auth/Facerec/roots/'
+    path = os.path.join(PATH,'roots/')
     system(f"sudo chattr -R -i {path}")
     system(f"sudo chmod -R ugo+rw {path}")
     for i in range(10):

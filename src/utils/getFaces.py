@@ -1,7 +1,15 @@
 import sys
 import numpy as np
+from os import path
 
-deps_path = list(np.load('/lib/Auth/Facerec/deps_path.npy'))
+import os, sys, inspect
+current_dir = path.dirname(path.abspath(inspect.getfile(inspect.currentframe())))
+src_dir = path.dirname(current_dir)
+main_dir = path.dirname(src_dir)
+sys.path.insert(0, main_dir) 
+from config import PATH
+
+deps_path = list(np.load(path.join(PATH, 'deps_path.npy')))
 sys.path = deps_path + [path for path in sys.path if path not in deps_path]
 
 from os import listdir, system
@@ -16,7 +24,7 @@ CSEL = '\33[7m'
 
 def getFaces(training=False, model_n=0):
 
-    path = '/lib/Auth/Facerec/roots/'
+    path = path.join(PATH, 'roots/')
     if training:
         if not model_n:
             print("\nFacerec will store 10 different models of your face to master your face.")
