@@ -7,11 +7,9 @@ from getFaces import (face_distance,
  np,
 )
 
-import os, sys, inspect
-current_dir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
-src_dir = os.path.dirname(current_dir)
-main_dir = os.path.dirname(src_dir)
-sys.path.insert(0, main_dir) 
+import sys
+from pathlib import Path
+sys.path.append(str(Path('.').absolute().parent.parent))
 from config import PATH
 
 def load_npy(file):

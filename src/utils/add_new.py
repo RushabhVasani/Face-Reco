@@ -1,10 +1,8 @@
 from os import system, path
 
-import sys, inspect
-current_dir = path.dirname(path.abspath(inspect.getfile(inspect.currentframe())))
-src_dir = path.dirname(current_dir)
-main_dir = path.dirname(src_dir)
-sys.path.insert(0, main_dir) 
+import sys
+from pathlib import Path
+sys.path.append(str(Path('.').absolute().parent.parent))
 from config import PATH
 
 import getFaces

@@ -2,11 +2,9 @@ import sys
 import numpy as np
 from os import path
 
-import os, sys, inspect
-current_dir = path.dirname(path.abspath(inspect.getfile(inspect.currentframe())))
-src_dir = path.dirname(current_dir)
-main_dir = path.dirname(src_dir)
-sys.path.insert(0, main_dir) 
+import sys
+from pathlib import Path
+sys.path.append(str(Path('.').absolute().parent.parent))
 from config import PATH
 
 deps_path = list(np.load(path.join(PATH, 'deps_path.npy')))

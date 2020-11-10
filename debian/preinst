@@ -1,2 +1,2 @@
 #!/bin/bash
-mkdir -p /lib/Auth/Facerec/roots
+mkdir -p /usr/lib/Auth/Facerec/roots

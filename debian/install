@@ -1,9 +1,9 @@
-src/utils/. lib/Auth/Facerec/
-src/cli/. lib/Auth/Facerec/
-build.py lib/Auth/Facerec/
-comm_auth_orig.py lib/Auth/Facerec/
-Facerec lib/Auth/Facerec/
-config.py lib/Auth/Facerec/
+src/utils/. usr/lib/Auth/Facerec/
+src/cli/. usr/lib/Auth/Facerec/
+build.py usr/lib/Auth/Facerec/
+comm_auth_orig.py usr/lib/Auth/Facerec/
+Facerec usr/lib/Auth/Facerec/
+config.py usr/lib/Auth/Facerec/
 src/cli/facerec usr/share/bash-completion/completions/
-pam_python.so lib/x86_64-linux-gnu/security/
+pam_python.so usr/lib/x86_64-linux-gnu/security/
 

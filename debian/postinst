@@ -4,7 +4,7 @@
 sudo -H pip3 --no-cache-dir install face_recognition terminaltables
 
 # setup
-cd /lib/Auth/Facerec/
+cd /usr/lib/Auth/Facerec/
 sudo python3 ./build.py
 chmod +x cli.sh cli_setup.sh
 chmod -r -w ./
