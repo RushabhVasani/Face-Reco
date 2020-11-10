@@ -8,7 +8,7 @@ from getFaces import (face_distance,
  np,
 )
 
-from config import PATH
+from .config import PATH
 
 def load_npy(file):
     return list(np.load(file))
@@ -31,4 +31,3 @@ def authenticate():
         if matches.any():
             return True
     return False
-

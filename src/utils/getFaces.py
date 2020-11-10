@@ -2,7 +2,7 @@ import sys
 import numpy as np
 from os import path
 
-from config import PATH
+from .config import PATH
 
 deps_path = list(np.load(path.join(PATH, 'deps_path.npy')))
 sys.path = deps_path + [path for path in sys.path if path not in deps_path]
