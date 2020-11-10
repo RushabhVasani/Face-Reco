@@ -1,5 +1,5 @@
 from os import system, path
-from .config import PATH
+import config
 
 import getFaces
 
@@ -8,7 +8,7 @@ CGRN = '\33[42m'
 CEND = '\33[0m'
 
 if __name__ == '__main__':
-    path = path.join(PATH,'roots/')
+    path = path.join(config.PATH,'roots/')
     system(f"sudo chattr -R -i {path}")
     system(f"sudo chmod -R ugo+rw {path}")
     for i in range(10):
