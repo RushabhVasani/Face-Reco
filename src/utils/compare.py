@@ -1,5 +1,3 @@
-import os
-
 from getFaces import (face_distance,
  getFaces,
  isfile,
@@ -15,7 +13,7 @@ def load_npy(file):
 
 def authenticate():
 
-    path = os.path.join(config.PATH, 'roots/')
+    path = config.PATH + 'roots/'
     roots = [(path+f) for f in listdir(path) if isfile(join(path, f))] 
     if not roots:
         return False
