@@ -1,9 +1,10 @@
 import sys
 import numpy as np
+from os import path
 
 import config
 
-deps_path = list(np.load(config.PATH + 'deps_path.npy'))
+deps_path = list(np.load(path.join(config.PATH, 'deps_path.npy')))
 sys.path = deps_path + [path for path in sys.path if path not in deps_path]
 
 from os import listdir, system
@@ -18,7 +19,7 @@ CSEL = '\33[7m'
 
 def getFaces(training=False, model_n=0):
 
-    path = config.PATH + 'roots/'
+    path = path.join(config.PATH, 'roots/')
     if training:
         if not model_n:
             print("\nFacerec will store 10 different models of your face to master your face.")
