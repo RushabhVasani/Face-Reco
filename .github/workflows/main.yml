@@ -6,16 +6,12 @@ on:
     paths-ignore:
       - README.md
       - LICENSE
-      - Dockerfile
-      - _version.py
       
   pull_request:
     branches: [ master ]
     paths-ignore:
       - README.md
       - LICENSE
-      - Dockerfile
-      - _version.py
 
 jobs:
   build:
