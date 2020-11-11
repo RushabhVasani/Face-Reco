@@ -6,12 +6,15 @@ on:
     paths-ignore:
       - README.md
       - LICENSE
+      - .github/workflows/
+      
   pull_request:
     branches: [ master ]
     paths-ignore:
       - README.md
       - LICENSE
-
+      - .github/workflows/
+      
 jobs:
   build:
     name: Lint Code Base
