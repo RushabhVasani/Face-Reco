@@ -6,4 +6,3 @@ Facerec usr/lib/Auth/Facerec/
 config.py usr/lib/Auth/Facerec/
 src/cli/facerec usr/share/bash-completion/completions/
 pam_python.so lib/x86_64-linux-gnu/security/
-_version.py usr/lib/Auth/Facerec
