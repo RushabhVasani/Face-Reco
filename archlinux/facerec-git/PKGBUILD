@@ -7,8 +7,8 @@
 # Other VCS sources are not natively supported by makepkg yet.
 
 # Maintainer: Your Name <youremail@domain.com>
-pkgname=facerec-git
-pkgver=1.1
+pkgname=facerec
+pkgver=r225.0583cab
 pkgrel=1
 pkgdesc="A face authentication system for Linux."
 arch=('x86_64')
@@ -43,7 +43,7 @@ md5sums=('SKIP')
 # a description of each element in the source array.
 
 pkgver() {
-	cd "$srcdir/${pkgname%-VCS}"
+# 	cd "$srcdir/${pkgname%-VCS}"
 
 # The examples below are not absolute and need to be adapted to each repo. The
 # primary goal is to generate version numbers that will increase according to
@@ -57,24 +57,30 @@ pkgver() {
 }
 
 package() {
-	cd "$srcdir/${pkgname%-VCS}"
+	cd "$srcdir/linux_face_unlock"
+	install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 
 	#preinstall
 	mkdir -p "$pkgdir/usr/lib/Auth/Facerec/roots"
 
 	#install
-	cp src/cli/facerec "$pkgdir/usr/share/bash-completion/completions/facerec"
-	cp config.py '$pkgdir/usr/lib/Auth/Facerec'
-	cp -r src/utils/* '$pkgdir/usr/lib/Auth/Facerec'
-	cp src/cli/cli_info.py '$pkgdir/usr/lib/Auth/Facerec'
-	cp -r src/cli/arch/* '$pkgdir/usr/lib/Auth/Facerec'
+	cp config.py "$pkgdir/usr/lib/Auth/Facerec"
+	cp -r src/utils/* "$pkgdir/usr/lib/Auth/Facerec"
+	cp src/cli/cli_info.py "$pkgdir/usr/lib/Auth/Facerec"
+	cp -r src/cli/arch/* "$pkgdir/usr/lib/Auth/Facerec"
 
 	#postinstall
 	# dependencies
 #     sudo -H pip3 --no-cache-dir install face_recognition terminaltables
 
+	mkdir -p "$pkgdir/usr/bin"
+	ln -s /lib/Auth/Facerec/cli.sh "$pkgdir/usr/bin/facerec"
+
+	mkdir -p "$pkgdir/usr/share/bash-completion/completions"
+	cp src/cli/facerec "$pkgdir/usr/share/bash-completion/completions/facerec"
+
     # setup
-    cd '$pkgdir/usr/lib/Auth/Facerec/'
+    cd "$pkgdir/usr/lib/Auth/Facerec/"
     sudo python3 ./build.py
     chmod +x cli.sh
     cd ~

@@ -1,0 +1,27 @@
+pkgbase = facerec
+	pkgdesc = A face authentication system for Linux
+	pkgver = 1.1
+	pkgrel = 1
+	url = https://github.com/rushabh-v/linux_face_unlock
+	arch = x86_64
+	license = GNU
+	makedepends = python2-sphinx
+	makedepends = cmake
+	makedepends = pkgfile
+	depends = opencv
+	depends = pam-python
+	depends = python3
+	depends = python-pillow
+	depends = python-dlib
+	depends = python-face_recognition
+	depends = python-face_recognition_models
+	depends = python-click
+	depends = python-numpy
+	depends = python-execnet
+	depends = python-terminaltables
+	backup = usr/lib/security/howdy/config.ini
+	source = https://github.com/rushabh-v/linux_face_unlock/archive/v1.1.zip
+	sha256sums = 7eb1085e03aa6e66ac91269ac46fb9fede9e5da6dea89a3978efdd2e7b9bd73b
+
+pkgname = facerec
+

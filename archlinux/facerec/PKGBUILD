@@ -25,7 +25,11 @@ depends=(
 	'python-execnet'
 	'python-terminaltables'
 )
-makedepends=()
+makedepends=(
+	'python2-sphinx'
+	'cmake'
+	'pkgfile'
+)
 checkdepends=()
 optdepends=()
 provides=()
@@ -35,29 +39,35 @@ backup=()
 options=()
 install=
 changelog=
-source=("$pkgname-$pkgver.tar.gz"
-        "$pkgname-$pkgver.patch")
-noextract=()
-md5sums=()
-validpgpkeys=()
-
-prepare() {
-	cd "$pkgname-$pkgver"
-	patch -p1 -i "$srcdir/$pkgname-$pkgver.patch"
-}
-
-build() {
-	cd "$pkgname-$pkgver"
-	./configure --prefix=/usr
-	make
-}
-
-check() {
-	cd "$pkgname-$pkgver"
-	make -k check
-}
+source=("https://github.com/rushabh-v/linux_face_unlock/archive/v$pkgver.zip")
+sha256sums=('7eb1085e03aa6e66ac91269ac46fb9fede9e5da6dea89a3978efdd2e7b9bd73b')
 
 package() {
-	cd "$pkgname-$pkgver"
-	make DESTDIR="$pkgdir/" install
+	cd "$srcdir/linux_face_unlock-$pkgver"
+	install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+
+	#preinstall
+	mkdir -p "$pkgdir/usr/lib/Auth/Facerec/roots"
+
+	#install
+	cp config.py "$pkgdir/usr/lib/Auth/Facerec"
+	cp -r src/utils/* "$pkgdir/usr/lib/Auth/Facerec"
+	cp src/cli/cli_info.py "$pkgdir/usr/lib/Auth/Facerec"
+	cp -r src/cli/arch/* "$pkgdir/usr/lib/Auth/Facerec"
+
+	#postinstall
+	# dependencies
+#     sudo -H pip3 --no-cache-dir install face_recognition terminaltables
+
+	mkdir -p "$pkgdir/usr/bin"
+	ln -s /lib/Auth/Facerec/cli.sh "$pkgdir/usr/bin/facerec"
+
+	mkdir -p "$pkgdir/usr/share/bash-completion/completions"
+	cp src/cli/facerec "$pkgdir/usr/share/bash-completion/completions/facerec"
+
+    # setup
+    cd "$pkgdir/usr/lib/Auth/Facerec/"
+    sudo python3 ./build.py
+    chmod +x cli.sh
+    cd ~
 }
