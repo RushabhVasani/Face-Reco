@@ -2,30 +2,30 @@
 
 FILE=/usr/share/pam-configs/Facerec
 SUDO=/etc/pam.d/sudo
-TEXT='auth      sufficient   pam_python.so /lib/Auth/Facerec/pam.py'
+TEXT='auth      sufficient   pam_python.so /lib/Auth/Facerec/pam_ptn.py'
 
 function facerec(){
 if [ "$1" = "new" ]; then
     sudo python3 /usr/lib/Auth/Facerec/add_new.py
 
 
-elif [ "$1" = "enable" ]; then
-    if grep -q $TEXT $SUDO;then
-      echo "alred"
-    else
-      sudo echo $TEXT >> $SUDO
-      echo "done"
-    fi
-    echo "Enabling facerec... Done"
-
-
-elif [ "$1" = "disable" ]; then
-    if grep -q $TEXT $SUDO;then
-      sed -i $TEXT $SUDO
-    else
-      echo "NotE"
-    fi
-    echo "Disabling facerec... Done"
+#elif [ "$1" = "enable" ]; then
+#    if grep -q $TEXT $SUDO;then
+#      echo "already enabled"
+#    else
+#      sudo echo $TEXT >> $SUDO
+#      echo "done"
+#    fi
+#    echo "Enabling facerec... Done"
+#
+#
+#elif [ "$1" = "disable" ]; then
+#    if grep -q $TEXT $SUDO;then
+#      sed -i $TEXT $SUDO
+#    else
+#      echo "Note"
+#    fi
+#    echo "Disabling facerec... Done"
 
 
 elif [ "$1" = "remove" ]; then

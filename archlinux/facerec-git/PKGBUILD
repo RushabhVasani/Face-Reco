@@ -6,9 +6,9 @@
 # The following guidelines are specific to BZR, GIT, HG and SVN packages.
 # Other VCS sources are not natively supported by makepkg yet.
 
-# Maintainer: Your Name <youremail@domain.com>
+# Maintainer: Sarbesh Kumar Sarkar <sarbeshsarkarsks@gmail.com>
 pkgname=facerec
-pkgver=r225.0583cab
+pkgver=r226.d4aed9e
 pkgrel=1
 pkgdesc="A face authentication system for Linux."
 arch=('x86_64')
